@@ -353,7 +353,7 @@ lista_citta_9.extend(lista_citta_10)
 print(lista_citta_9) """
 
 #lezione 12: tuple
-# collezioni di dati ordinati, indiizzati, non modificabili e permettono duplicati
+# collezioni di dati ordinati, indicizzati, non modificabili e permettono duplicati
 # se si prova a fare lista[0] = 'lello' il codice darà errore perchè gli elementi di una tupla non sono modificabili
 # 1 condizione er vedere se è una tupla
 # 2 construttore tuple + recupero elementi dalla lista
@@ -679,4 +679,73 @@ print(persona_5["indirizzo"]["num_civico"]) #per prendere il valore di chiave de
 ##########################################################################################
 
 # lezione 15: funzioni
+# 1- definizione di una funzione (def)
 
+print("\nESEMPI:")
+print("\n1° parte:")
+
+#definizione
+def fare_la_pasta():
+    print("metti acqua")
+    print("fai bollire")
+    print("metti la pasta")
+
+#chiamata alla funzione
+fare_la_pasta()
+
+print("\n2° parte: enumerate per utilizzare l'index")
+#argomenti
+
+def visualizza_ingredienti(lista_ingredienti):
+
+    for index, ingr in enumerate(lista_ingredienti):
+        print(f"{index} -> {ingr}")
+
+
+visualizza_ingredienti(["milano", "roma", "napoli"])
+
+print("\n3° parte: numero di argomenti indefinito")
+
+def fai_la_cacio_e_pepe(*opzioni):
+    print(opzioni[0])
+    print(opzioni[1])
+    print(opzioni[2])
+
+fai_la_cacio_e_pepe("cacio e pepe", 10, True)
+
+print("\n4° parte: argomenti con chiave valore \nAnche se gli argomenti non vengono passati nell\'ordine stabilito funzioneranno tramite la loro chiave")
+
+def fare_pasta_al_sugo(tipo_pasta, sugo):
+    print(tipo_pasta)
+    if sugo:
+        print("sugo SI")
+
+fare_pasta_al_sugo(sugo = True, tipo_pasta = "Fusilli")
+
+print("\n4° parte: argomenti con chiave valore \nAnche se gli argomenti non vengono passati nell\'ordine stabilito funzioneranno tramite la loro chiave")
+
+def fare_pasta_al_pomodoro(tipo_pasta = "spaghetti"):
+    print(tipo_pasta)
+
+fare_pasta_al_pomodoro("fusilli")
+fare_pasta_al_pomodoro()
+
+print("\n5° parte: return valori")
+
+
+def is_maggiore_di_20(valore):
+    if valore > 20:
+        print("VERO")
+        return True
+    else:
+        print("FALSO")
+        return False
+
+valore_1 = is_maggiore_di_20(10)
+valore_2 = is_maggiore_di_20(30)
+
+if valore_1 :
+    print("froza napoli 1")
+
+if valore_2 :
+    print("froza napoli 2")
